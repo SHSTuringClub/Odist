@@ -4,8 +4,13 @@
   "window": {
     "toolbar": false
   },
-  "version": "William Wordsworth",
-  "license": "GPLv3",
+  "version": "0.0.1",
+  "license": "GPL-3.0",
+  "description": "Bleeding-Edge display system, based on nw.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SHSTuringClub/Odist.git"
+  },
   "chromium-args": "--mixed-context",
   "dependencies": {
     "fs-extra": "^0.30.0",
