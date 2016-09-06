@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Odist - 配置</title>
+    <script>
+        var soul = require('../soul');
+        soul.enlighten('alter');
+    </script>
+</head>
+<body>
+    <h1>配置</h1>
+    <form id="glimpse-form">
+        <fieldset>
+            <legend>默认翻页时间(秒),会被内容设置覆盖。</legend>
+            <input type="number" id="glimpse" placeholder="30" min="1" required="required">
+            <button type="submit" id="glimpse-submit" onclick="submit_glimpse()">提交</button>
+        </fieldset>
+    </form>
+    <form id="timeline-view">
+        <fieldset>
+            <legend>Timeline设置</legend>
+            <table id="timeline-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>类型</th>
+                        <th>路径</th>
+                        <th>起始时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="timeline-table-body">
+                </tbody>
+            </table>
+        </fieldset>
+    </form>
+    <form id="timeline-new">
+        <fieldset>
+            <legend>Timeline元素新增</legend>
+            <div class="pure-control-group">
+                <label for="new_type">类型</label>
+                <select id="new_type">
+                    <option>新闻</option>
+                    <option>图片含描述</option>
+                    <option>图片不含描述</option>
+                    <option>待机</option>
+                </select>
+            </div>
+            <div class="pure-control-group">
+                <label for="new_directory">目录</label>
+                <input id="new_directory" type="file" nwdirectory>
+            </div>
+            <div class="pure-control-group">
+                <label for="new_weekday">起始时间</label>
+                <select id="new_weekday">
+                    <option>周一</option>
+                    <option>周二</option>
+                    <option>周三</option>
+                    <option>周四</option>
+                    <option>周五</option>
+                    <option>周六</option>
+                    <option>周日</option>
+                </select>
+                <input type="number" min="0" max="23" placeholder="HH" required="required" id="HH">
+                :
+                <input type="number" min="0" max="59" placeholder="MM" required="required" id="MM">
+            </div>
+            <div class="pure-control-group">
+                <label></label>
+                <button type="submit" class="pure-button pure-button-primary" onclick="rewrite_history()">提交</button>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

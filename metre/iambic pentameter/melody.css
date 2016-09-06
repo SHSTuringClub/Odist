@@ -1,0 +1,27 @@
+#title{
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    width: 100%;
+}
+
+#setting, #start{
+    text-align: center;
+    width: 40%;
+    font-size: 150%;
+    display: block;
+}
+
+#setting_div, #start_div{
+    padding-top: 2em;
+}
+
+html{
+    padding: 2em;
+}
+
+#copyrights{
+    padding-top: 1em;
+    text-align: center;
+    color: #0775ae;
+}

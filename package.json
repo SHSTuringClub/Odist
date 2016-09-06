@@ -1,0 +1,18 @@
+{
+  "main": "pslams/melody.html",
+  "name": "Odist",
+  "window": {
+    "toolbar": false
+  },
+  "version": "William Wordsworth",
+  "license": "GPLv3",
+  "chromium-args": "--mixed-context",
+  "dependencies": {
+    "fs-extra": "^0.30.0",
+    "moment": "^2.13.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^2.13.6"
+  }
+}
