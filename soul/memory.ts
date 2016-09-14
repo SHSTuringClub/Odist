@@ -6,11 +6,13 @@ interface Config {
     metre: string;
     glimpse: number;
     chronicle: Chronicle;
+    apocalypto: Array<string>;
 }
 
 export var config: Config;
 
-function init() {
+function init()
+{
     if (!fs.existsSync('memories.json')) {
         if (!fs.existsSync('memories.example.json')) {
             console.log('Neither memories.json nor example was found!');
@@ -25,34 +27,51 @@ function init() {
     }
 }
 
-function save(){
+function save()
+{
     fs.writeJSONSync('memories.json', config);
 }
 
-export function get_metre(){
+export function get_metre()
+{
     return config.metre;
 }
 
-export function get_glimpse(){
+export function get_glimpse()
+{
     return config.glimpse;
 }
 
-export function get_chronicle(){
+export function get_chronicle()
+{
     return config.chronicle
 }
 
-export function set_metre(str: string){
+export function get_apocalypto()
+{
+    return config.apocalypto;
+}
+
+export function set_metre(str: string)
+{
     config.metre = str;
     save();
 }
 
-export function set_glimpse(num: number){
-    config.glimpse = num; // At least 1 sec is required.
+export function set_glimpse(num: number)
+{
+    config.glimpse = num;
     save();
 }
 
-export function set_chronicle(obj: Chronicle){
+export function set_chronicle(obj: Chronicle)
+{
     config.chronicle = obj;
+    save();
+}
+
+export function set_apocalypto(apo: Array<string>){
+    config.apocalypto = apo;
     save();
 }
 

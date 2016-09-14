@@ -1,0 +1,125 @@
+#side-bar{
+    height: 100%;
+    width: 23%;
+    top: 0;
+    right: 0;
+}
+
+#logo-container{
+    height: 18.5%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#noti-container{
+    height: 51%;
+    width: 100%;
+    top: 18.5%;
+    left: 0;
+}
+
+#logo{
+    height: 80%;
+    width: 95%;
+    top: 10%;
+    left: 5%;
+    background-image: url('assets/logo_v.png');
+}
+
+#notification{
+    height: 72%;
+    width: 90%;
+    left: 5%;
+    top: 5%;
+}
+
+#credit{
+    height: 12%;
+    width: 90%;
+    left: 5%;
+    bottom: 15%;
+    color: #85c3da;
+}
+
+#credit:after{
+    display: block;
+    color: white;
+    content: "Proudly and faithfully prosed by SHS Turing Club with ❤";
+}
+
+#info-container{
+    height: 30.5%;
+    width: 100%;
+    top: 69.5%;
+    left: 0;
+}
+
+#date-time{
+    height: 60%;
+    width: 90%;
+    top: 3%;
+    left: 5%;
+}
+
+#date{
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    font-size: 4rem;
+    text-align: center;
+}
+
+#time {
+    position: absolute;
+    height: 70%;
+    width: 100%;
+    top: 42%;
+    left: 0;
+    font-size: 6rem;
+    text-align: center;
+}
+
+#aqi {
+    width: 90%;
+    height: 30%;
+    bottom: 0;
+    left: 5%;
+    font-size: 4rem;
+    text-align: center;
+}
+
+#frame-1{
+    width: 43.3%;
+    height: 4%;
+    bottom: 0;
+    left: 25%;
+}
+
+#frame-2{
+    width: 2%;
+    height: 65%;
+}
+
+#frame-3{
+    width: 40%;
+    height: 3%;
+}
+
+#main-container{
+    width: 77%;
+    height: 100%;
+}
+
+#description{
+    display: none;
+}
+
+#image-container{
+    width: 90%;
+    height: 83%;
+    top: 7.5%;
+    left: 6%;
+}

@@ -1,0 +1,10 @@
+html{
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+th .button-delete{
+    color: white;
+    background: rgb(202, 60, 60);
+    font-size: 70%;
+}

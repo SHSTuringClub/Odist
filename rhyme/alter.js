@@ -67,13 +67,7 @@ function prayer_ignite(_no) {
     soul.memory.set_chronicle(chronicle);
 }
 function rewrite_history() {
-    var new_type = document.getElementById('new_type').value;
-    var ty = p_type[new_type];
-    var path = document.getElementById('new_directory').value;
-    var new_weekday = document.getElementById('new_weekday').value;
-    var weekday = day[new_weekday];
-    var hh = parseInt(document.getElementById('HH').value);
-    var mm = parseInt(document.getElementById('MM').value);
+    var new_type = document.getElementById('new_type').value, ty = p_type[new_type], path = document.getElementById('new_directory').value, new_weekday = document.getElementById('new_weekday').value, weekday = day[new_weekday], hh = parseInt(document.getElementById('HH').value), mm = parseInt(document.getElementById('MM').value);
     var prayer = new Prayer(weekday, hh, mm, ty, path);
     for (var i = 0; i < chronicle.length; i++) {
         if (chronicle[i].p_time.toTimestamp() == prayer.p_time.toTimestamp()) {
@@ -89,4 +83,3 @@ function rewrite_history() {
 }
 glimpse_genesis();
 timeline_genesis();
-//# sourceMappingURL=alter.js.map

@@ -30,13 +30,17 @@ function get_chronicle() {
     return exports.config.chronicle;
 }
 exports.get_chronicle = get_chronicle;
+function get_apocalypto() {
+    return exports.config.apocalypto;
+}
+exports.get_apocalypto = get_apocalypto;
 function set_metre(str) {
     exports.config.metre = str;
     save();
 }
 exports.set_metre = set_metre;
 function set_glimpse(num) {
-    exports.config.glimpse = num; // At least 1 sec is required.
+    exports.config.glimpse = num;
     save();
 }
 exports.set_glimpse = set_glimpse;
@@ -45,4 +49,10 @@ function set_chronicle(obj) {
     save();
 }
 exports.set_chronicle = set_chronicle;
+function set_apocalypto(apo) {
+    exports.config.apocalypto = apo;
+    save();
+}
+exports.set_apocalypto = set_apocalypto;
 init();
+//# sourceMappingURL=memory.js.map

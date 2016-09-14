@@ -80,13 +80,13 @@ function prayer_ignite(_no: number): void{
 }
 
 function rewrite_history(){
-    let new_type: string = (<HTMLSelectElement>document.getElementById('new_type')).value;
-    let ty: number = p_type[new_type];
-    let path: string = (<HTMLInputElement>document.getElementById('new_directory')).value;
-    let new_weekday: string = (<HTMLSelectElement>document.getElementById('new_weekday')).value;
-    let weekday: number = day[new_weekday];
-    let hh: number = parseInt((<HTMLInputElement>document.getElementById('HH')).value);
-    let mm: number = parseInt((<HTMLInputElement>document.getElementById('MM')).value);
+    let new_type: string = (<HTMLSelectElement>document.getElementById('new_type')).value,
+        ty: number = p_type[new_type],
+        path: string = (<HTMLInputElement>document.getElementById('new_directory')).value,
+        new_weekday: string = (<HTMLSelectElement>document.getElementById('new_weekday')).value,
+        weekday: number = day[new_weekday],
+        hh: number = parseInt((<HTMLInputElement>document.getElementById('HH')).value),
+        mm: number = parseInt((<HTMLInputElement>document.getElementById('MM')).value);
 
     let prayer: Prayer = new Prayer(weekday, hh, mm, ty, path);
 

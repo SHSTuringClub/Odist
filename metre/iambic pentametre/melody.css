@@ -5,16 +5,14 @@
     width: 100%;
 }
 
-#setting, #start{
+#setting, #start, #apocalypto{
+    display: block;
     text-align: center;
     width: 40%;
     font-size: 150%;
-    display: block;
+    margin-bottom: 0.3em;
 }
 
-#setting_div, #start_div{
-    padding-top: 2em;
-}
 
 html{
     padding: 2em;
