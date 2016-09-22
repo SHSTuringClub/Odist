@@ -46,6 +46,6 @@ switch (prayer.p_type){
         type = 'blackhole';
 }
 
-enlighten('pic_wd');
+enlighten(type);
 
 

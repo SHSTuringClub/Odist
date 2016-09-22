@@ -38,18 +38,26 @@ function init()
         quit();
     }
     main_loop();
-    window.setInterval(main_loop, stat.glimpse);
+    window.setInterval(main_loop, stat.glimpse * 1000);
 }
 
 function main_loop()
 {
     let pic_path: string = stat.directory + sep + stat.file_list[stat.index];
     document.getElementById('image').setAttribute('style', `background-image: url('file://${pic_path}')`);
-    if (stat.index = stat.file_list.length - 1){
+    if (stat.index == stat.file_list.length - 1){
         stat.index = 0;
     } else {
         stat.index++;
     }
+
+    let t = new Date();
+    let date = `${t.getFullYear()}.${t.getMonth() + 1}.${t.getDate()}`;
+    let time = `${t.getHours()}:${t.getMinutes()}`;
+    document.getElementById('date').innerHTML = date;
+    document.getElementById('time').innerHTML = time;
+
+
     check_prayer_type(current);
 }
 
