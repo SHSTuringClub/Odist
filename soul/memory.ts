@@ -7,6 +7,7 @@ interface Config {
     glimpse: number;
     chronicle: Chronicle;
     apocalypto: Array<string>;
+    aqi: number;
 }
 
 export var config: Config;
@@ -52,6 +53,11 @@ export function get_apocalypto()
     return config.apocalypto;
 }
 
+export function get_aqi()
+{
+    return config.aqi;
+}
+
 export function set_metre(str: string)
 {
     config.metre = str;
@@ -74,5 +80,11 @@ export function set_apocalypto(apo: Array<string>){
     config.apocalypto = apo;
     save();
 }
+
+export function set_aqi(aqi: number){
+    config.aqi  = aqi;
+    save();
+}
+
 
 init();

@@ -1,6 +1,7 @@
 declare function check_prayer_type(current: Prayer): void;
 declare function require(moduleName: string): any;
 declare function quit(): void;
+declare function update_info(): void;
 import {Prayer} from "../soul/chronicle";
 import {get_chronicle, get_glimpse} from "../soul/memory";
 let fs = require('fs-extra');
@@ -51,13 +52,7 @@ function main_loop()
         stat.index++;
     }
 
-    let t = new Date();
-    let date = `${t.getFullYear()}.${t.getMonth() + 1}.${t.getDate()}`;
-    let time = `${t.getHours()}:${t.getMinutes()}`;
-    document.getElementById('date').innerHTML = date;
-    document.getElementById('time').innerHTML = time;
-
-
+    update_info();
     check_prayer_type(current);
 }
 

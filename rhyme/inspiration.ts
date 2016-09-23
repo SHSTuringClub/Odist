@@ -1,7 +1,10 @@
+declare function require(moduleName: string): any;
 import {Prayer, p_type} from "../soul/chronicle";
-import {get_chronicle} from "../soul/memory";
+import {get_chronicle, get_aqi} from "../soul/memory";
 import {enlighten} from "../soul/foundation";
 declare var nw: any;
+let mo = require('moment');
+
 
 let win = nw.Window.get();
 //win.resizeTo(1920, 1080);
@@ -12,6 +15,11 @@ function quit(){
     win.hide();
     win.close(true);
     nw.App.unregisterGlobalHotKey(shortcut);
+}
+
+function update_info(){
+    document.getElementById('date').innerHTML = mo().format('YYYY.MM.DD');
+    document.getElementById('time').innerHTML = mo().format('HH:mm');
 }
 
 
@@ -45,7 +53,7 @@ switch (prayer.p_type){
     default:
         type = 'blackhole';
 }
-
+document.getElementById('aqi').innerHTML = `AQI: ${get_aqi()}`;
 enlighten(type);
 
 

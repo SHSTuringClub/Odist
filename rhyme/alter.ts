@@ -21,7 +21,9 @@ let day: {[index: string]: number} = {
 
 
 let glimpse = soul.memory.get_glimpse();
+let aqi = soul.memory.get_aqi();
 let glimpse_element = <HTMLInputElement>document.getElementById('glimpse');
+let aqi_element = <HTMLInputElement>document.getElementById('aqi');
 let chronicle = <Chronicle>soul.memory.get_chronicle();
 //chronicle = [
 //    new Prayer(0, 5, 50, 0, 'D:\\test1'),
@@ -33,9 +35,18 @@ function glimpse_genesis(){
     glimpse_element.value = glimpse.toString();
 }
 
+function aqi_genesis(){
+    aqi_element.value = aqi.toString();
+}
+
 function submit_glimpse(){
     let g = glimpse_element.value;
     soul.memory.set_glimpse(parseInt(g));
+}
+
+function submit_aqi(){
+    let a = aqi_element.value;
+    soul.memory.set_aqi(parseInt(a));
 }
 
 function generate_tr(_no: number, _pr: Prayer){
@@ -105,4 +116,5 @@ function rewrite_history(){
 }
 
 glimpse_genesis();
+aqi_genesis();
 timeline_genesis();
