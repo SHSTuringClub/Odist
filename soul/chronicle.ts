@@ -38,6 +38,7 @@ export enum p_type {
     新闻 = 0,
     图片含描述,
     图片不含描述,
+    视频,
     待机 = 9
 }
 
@@ -74,11 +75,14 @@ export class Prayer {
             throw RangeError();
         }
 
-        while (i < ch.length && ch[i].p_time.toTimestamp() <= now){
+        while (ch[i].p_time.toTimestamp() <= now){
             i++;
+            if(i == ch.length){
+                return ch[i-1];
+            }
         }
 
-        if (i==0){
+        if (i == 0){
             return ch[ch.length - 1];
         }
 

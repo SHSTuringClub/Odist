@@ -37,14 +37,13 @@ shortcut.on('active', quit);
 let prayer = Prayer.get_current_prayer(get_chronicle());
 let type: string;
 switch (prayer.p_type){
-    /* TODO
     case p_type.新闻:
         type = 'news';
         break;
+
     case p_type.图片含描述:
-        type = 'pic_d';
+        type = 'news';
         break;
-        */
 
     case p_type.图片不含描述:
         type = 'pic_wd';
