@@ -3,8 +3,9 @@ html{
     padding-right: 2em;
 }
 
-th .button-delete{
-    color: white;
-    background: rgb(202, 60, 60);
-    font-size: 70%;
+#apocalypto-content{
+    width: 28rem;
+    height: 8rem;
+    resize: vertical;
+    margin-bottom: 1rem;
 }

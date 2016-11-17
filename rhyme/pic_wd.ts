@@ -26,8 +26,8 @@ function init()
 
     try{
         let tmp: Array<string> = fs.readdirSync(stat.directory);
-        for (var i of tmp){
-            for (var j of pic_suffix){
+        for (let i of tmp){
+            for (let j of pic_suffix){
                 if (endsWith(i, j)){
                     file_list = file_list.concat(i);
                 }
