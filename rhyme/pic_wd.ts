@@ -5,7 +5,7 @@ declare function update_info(): void;
 import {Prayer} from "../soul/chronicle";
 import {get_chronicle, get_glimpse} from "../soul/memory";
 let fs = require('fs-extra');
-let sep = require('path').sep;
+let sep = '/';
 
 function endsWith(str: string, suffix: string): boolean{
     return str.indexOf(suffix, str.length - suffix.length) !== -1;

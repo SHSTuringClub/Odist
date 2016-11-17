@@ -47,7 +47,7 @@ export class Prayer {
     p_type: p_type;
     p_path: string;
     constructor(_day: number, _hour: number, _min: number, _type: p_type, _path: string){
-        this.p_path = _path;
+        this.p_path = _path.replace('\\', '/');
         this.p_type = _type;
         this.p_time = new Weektime(_day, _hour, _min);
     }
