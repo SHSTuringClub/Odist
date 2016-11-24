@@ -1,3 +1,7 @@
+declare function require(moduleName: string): any;
+let lamu = require('lamu')();
+
+
 class Weektime {
     private w_day: number;
     private w_hour: number;
@@ -72,6 +76,7 @@ export class Prayer {
         let i = 0, now = Weektime.get_now();
 
         if (ch.length == 0){
+            lamu.log({label: 'error', text: 'Blank chronicle!'});
             throw RangeError();
         }
 

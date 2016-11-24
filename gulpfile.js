@@ -10,7 +10,7 @@ gulp.task("default", ts_compile);
 gulp.task("deploy", deploy);
 
 function ts_compile() {
-    return ts_soul.src().pipe(ts(ts_soul)).js.pipe(gulp.dest("."));
+    return ts_soul.src('!package.nw/**').pipe(ts(ts_soul)).js.pipe(gulp.dest("."));
 }
 
 function deploy(){

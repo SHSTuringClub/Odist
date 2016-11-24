@@ -2,7 +2,7 @@ declare function require(moduleName: string): any;
 import {Prayer, p_type} from "../soul/chronicle";
 import {get_chronicle, get_aqi, get_apocalypto} from "../soul/memory";
 import {enlighten} from "../soul/foundation";
-declare var nw: any;
+declare let nw: any;
 let mo = require('moment');
 let lamu = require('lamu')();
 
@@ -29,7 +29,7 @@ function get_apocalypto_iterator(){
 
         return ret_val
     };
-    return func_ret
+    return func_ret;
 }
 
 (<any>window).get_notification = get_apocalypto_iterator();
@@ -59,31 +59,34 @@ let shortcut = new nw.Shortcut({key: "Ctrl+Q"});
 nw.App.registerGlobalHotKey(shortcut);
 shortcut.on('active', quit);
 
-let prayer = Prayer.get_current_prayer(get_chronicle());
-let type: string;
-switch (prayer.p_type){
-    case p_type.新闻:
-        type = 'news';
-        break;
+if (get_chronicle().length == 0){
+    enlighten('blackhole');
+} else {
+    let prayer = Prayer.get_current_prayer(get_chronicle());
+    let type: string;
+    switch (prayer.p_type) {
+        case p_type.新闻:
+            type = 'news';
+            break;
 
-    case p_type.图片含描述:
-        type = 'news';
-        break;
+        case p_type.图片含描述:
+            type = 'news';
+            break;
 
-    case p_type.图片不含描述:
-        type = 'pic_wd';
-        break;
+        case p_type.图片不含描述:
+            type = 'pic_wd';
+            break;
 
-    case p_type.视频:
-        type = 'video';
-        break;
+        case p_type.视频:
+            type = 'video';
+            break;
 
-    default:
-        type = 'blackhole';
+        default:
+            type = 'blackhole';
+    }
+
+    document.getElementById('aqi').innerHTML = `AQI: ${get_aqi()}`;
+    lamu.log({label: "info", text: `Enlightening type: ${type}`});
+    enlighten(type);
 }
-
-document.getElementById('aqi').innerHTML = `AQI: ${get_aqi()}`;
-lamu.log({label: "info", text: `Enlightening type: ${type}`});
-enlighten(type);
-
 
