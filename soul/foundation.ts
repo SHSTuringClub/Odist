@@ -1,6 +1,7 @@
 declare function require(moduleName: string): any;
 import m = require("./memory");
 let sep = require('path').sep;
+let lamu = require('lamu')();
 let metrePrefix = `..${sep}metre${sep}${m.get_metre()}${sep}`;
 let head = document.getElementsByTagName('head')[0];
 
@@ -36,4 +37,5 @@ function load_js(name: string){
 export function enlighten(name: string){
     load_js(name);
     load_theme(name);
+    lamu.log({label: 'success', text: `Template ${name} enlightened.`})
 }

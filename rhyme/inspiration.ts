@@ -4,6 +4,7 @@ import {get_chronicle, get_aqi, get_apocalypto} from "../soul/memory";
 import {enlighten} from "../soul/foundation";
 declare var nw: any;
 let mo = require('moment');
+let lamu = require('lamu')();
 
 let win = nw.Window.get();
 //win.resizeTo(1920, 1080);
@@ -81,6 +82,7 @@ switch (prayer.p_type){
 }
 
 document.getElementById('aqi').innerHTML = `AQI: ${get_aqi()}`;
+lamu.log({label: "info", text: `Enlightening type: ${type}`});
 enlighten(type);
 
 

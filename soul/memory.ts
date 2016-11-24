@@ -1,5 +1,6 @@
 declare function require(moduleName: string): any;
-var fs = require('fs-extra');
+let fs = require('fs-extra');
+let lamu = require('lamu')();
 import {Chronicle, Prayer} from './chronicle';
 
 interface Config {
@@ -10,16 +11,19 @@ interface Config {
     aqi: number;
 }
 
-export var config: Config;
+export let config: Config;
 
 function init()
 {
     if (!fs.existsSync('memories.json')) {
         if (!fs.existsSync('memories.example.json')) {
-            console.log('Neither memories.json nor example was found!');
+            lamu.log({label: 'error',
+                text: 'Neither memories.json nor memories.example.json is found. Try reinstall.'})
         }
         else {
             fs.copySync('memories.example.json', 'memories.json');
+            lamu.log({label: 'info',
+                text: 'Seems to be first run, initiating config from memories.example.json'})
         }
     }
     config = fs.readJSONSync('memories.json');
@@ -62,28 +66,33 @@ export function set_metre(str: string)
 {
     config.metre = str;
     save();
+    lamu.log({label: 'success', text: `Metre setting success! Current metre: ${str}`});
 }
 
 export function set_glimpse(num: number)
 {
     config.glimpse = num;
     save();
+    lamu.log({label: 'success', text: `Glimpse setting success! Current glimpse: ${num}`});
 }
 
 export function set_chronicle(obj: Chronicle)
 {
     config.chronicle = obj;
     save();
+    lamu.log({label: 'success', text: `Chronicle setting success!`});
 }
 
 export function set_apocalypto(apo: Array<string>){
     config.apocalypto = apo;
     save();
+    lamu.log({label: 'success', text: `Apocalypto setting success! Current apocalypto: ${apo}`});
 }
 
 export function set_aqi(aqi: number){
     config.aqi  = aqi;
     save();
+    lamu.log({label: 'success', text: `AQI setting success! Current AQI: ${aqi}`});
 }
 
 

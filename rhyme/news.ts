@@ -6,7 +6,9 @@ declare function update_info(): void;
 import {Prayer} from "../soul/chronicle";
 import {get_chronicle, get_glimpse} from "../soul/memory";
 let fs = require('fs-extra');
+let lamu = require('lamu')();
 let sep = '/';
+
 
 function endsWith(str: string, suffix: string): boolean{
     return str.indexOf(suffix, str.length - suffix.length) !== -1;
@@ -36,6 +38,7 @@ function init()
         stat.file_list = file_list.sort();
     }
     catch (e){
+        lamu.log({label: 'error', text: 'Read news error! Quitting...'});
         quit();
     }
     let main_loop = function(){

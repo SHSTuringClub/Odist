@@ -4,7 +4,7 @@
   "window": {
     "toolbar": false
   },
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "GPL-3.0",
   "description": "Bleeding-Edge display system, based on nw.js",
   "repository": {
@@ -14,6 +14,7 @@
   "chromium-args": "--mixed-context",
   "dependencies": {
     "fs-extra": "^0.30.0",
+    "lamu": "^0.1.0",
     "moment": "^2.15.1"
   },
   "devDependencies": {
