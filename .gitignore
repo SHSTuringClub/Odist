@@ -1,3 +1,6 @@
+### Deployment file
+package.nw
+
 ### TypeScript Generated JS
 soul/*.js
 soul/*.js.map

@@ -36,6 +36,7 @@ function get_apocalypto_iterator(){
 
 function quit(){
     win.hide();
+    window.clearInterval((<any>window).interval_id);
     win.close(true);
     nw.App.unregisterGlobalHotKey(shortcut);
 }

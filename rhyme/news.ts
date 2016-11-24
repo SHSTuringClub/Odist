@@ -57,7 +57,7 @@ function init()
 
     };
     main_loop();
-    window.setInterval(main_loop, stat.glimpse * 1000);
+    (<any>window).interval_id = window.setInterval(main_loop, stat.glimpse * 1000);
 }
 
 

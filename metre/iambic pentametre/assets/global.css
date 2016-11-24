@@ -1,6 +1,6 @@
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
-    font-family: 'Source Sans Pro', '思源黑体', "Source Han Sans CN", serif;
+    font-family: 'Source Sans Pro', '思源黑体', "Source Han Sans CN", '微软雅黑', serif;
 }
 
 .pure-button {
