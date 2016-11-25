@@ -16,6 +16,8 @@
 
 html{
     padding: 2em;
+    -webkit-user-select: none;
+    cursor: default;
 }
 
 #copyrights{
