@@ -29,7 +29,7 @@ class Weektime {
     static get_now(): number
     {
         let d = new Date();
-        let day = d.getDay(),
+        let day = d.getDay() - 1, // Here, day is 1-7, while in alter.ts we assume it should be 0-6
             hh = d.getHours(),
             mm = d.getMinutes();
         return day * 24 * 60 + hh * 60 + mm;
